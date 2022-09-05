@@ -48,7 +48,7 @@ class Permutation:
 
         cycles = []
 
-        while not_used.__len__() != 0:
+        while len(not_used) != 0:
             start = not_used[0]
             temp = self.elements[start] - 1
 
@@ -75,7 +75,7 @@ class Permutation:
 
         cycles_length = []
         for cycle in cycles:
-            cycles_length.append(cycle.__len__())
+            cycles_length.append(len(cycle))
 
         if cycles_length == 1:
             return cycles_length[0]
@@ -85,7 +85,7 @@ class Permutation:
         if cycles_length == 2:
             return result
 
-        for i in range(2, cycles_length.__len__() - 1):
+        for i in range(2, len(cycles_length) - 1):
             result = lcm.calculate_lcm(result, cycles_length[i])
 
         return result
