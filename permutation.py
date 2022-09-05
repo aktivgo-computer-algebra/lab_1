@@ -13,7 +13,7 @@ class Permutation:
     def get_neural_permutation(self) -> Permutation:
         elements = []
         for i in range(0, self.length):
-            elements.append(self.elements[i])
+            elements.append(i + 1)
 
         return Permutation(self.length, elements)
 
